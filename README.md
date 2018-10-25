@@ -1,5 +1,16 @@
-# sma
-Simple Moving Average calculator
+# Welcome to sma
+*sma* is a Simple Moving Average calculator
+
+# Getting started
+1. Install python dependencies
+```bash
+$ pip install -r requirements.txt
+```
+2. Run
+```console
+$ python main.py  --stocks FB,TSLA,AAPL --fr 2017-01-01 --to 2018-09-30 --window 20 50 100 200 --output graph
+```
+# Help
 
 ```
 usage: main.py [-h] --stocks STOCKS [--window WINDOW [WINDOW ...]] --fr FR
@@ -16,9 +27,4 @@ optional arguments:
                         Reference price
   --output {graph,inline,db}
                         Visualization type
-```
-
-Example
-```console
-$ python main.py  --stocks FB,TSLA,AAPL --fr 2017-01-01 --to 2018-09-30 --window 20 50 100 200 --output graph
 ```
