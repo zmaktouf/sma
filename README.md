@@ -4,14 +4,21 @@
 # Getting started
 1. Install python dependencies
 ```bash
-$ pip install -r requirements.txt
+[johndoe:~/projects/sma] $ pip install -r requirements.txt
 ```
-2. Run
-```console
-$ python main.py  --stocks FB,TSLA,AAPL --fr 2017-01-01 --to 2018-09-30 --window 20 50 100 200 --output graph
+2. Run test
+```bash
+[johndoe:~/projects/sma] $ python tests/runner.py 
+```
+3. Execute
+```bash
+[johndoe:~/projects/sma] $ python main.py  --stocks FB,TSLA,AAPL \
+                                           --fr 2017-01-01 \
+                                           --to 2018-09-30 \
+                                           --window 20 50 100 200 \
+                                           --output graph
 ```
 # Help
-
 ```
 usage: main.py [-h] --stocks STOCKS [--window WINDOW [WINDOW ...]] --fr FR
                --to TO [--strategy {lo,hi,avg}] [--output {graph,inline,db}]
