@@ -7,12 +7,13 @@ from atslib import Downloader, Portfolio, Viewer
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--stocks', required=True)
-    parser.add_argument('--window', nargs='+', type=int, default=[10, 20, 50, 100, 200])
-    parser.add_argument('--fr', required=True)
-    parser.add_argument('--to', required=True)
-    parser.add_argument('--strategy', choices=['lo', 'hi', 'avg'], default='lo')
-    parser.add_argument('--output', choices=['graph', 'inline', 'db'], default='graph')
+    parser.add_argument('--stocks', required=True, help="Comma separated value of stock codes")
+    parser.add_argument('--window', nargs='+', type=int, default=[10, 20, 50, 100, 200],
+                        help="List of number of days to compute SMA")
+    parser.add_argument('--fr', required=True, help="First date")
+    parser.add_argument('--to', required=True, help="Last date")
+    parser.add_argument('--strategy', choices=['lo', 'hi', 'avg'], default='lo', help="Reference price")
+    parser.add_argument('--output', choices=['graph', 'inline', 'db'], default='graph', help="Visualization type")
     args = parser.parse_args()
 
     stock_code_list = []
@@ -49,3 +50,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
