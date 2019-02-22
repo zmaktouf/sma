@@ -59,7 +59,7 @@ class Stock(object):
     def sample(self, from_date, to_date, ref_price, convert_date=True):
 
         def _value(col_name, elem):
-            if type(col_name) == tuple:
+            if isinstance(col_name, tuple):
                 return (float(elem[col_name[0]]) + float(elem[col_name[1]])) / 2
             else:
                 return float(elem[col_name])
