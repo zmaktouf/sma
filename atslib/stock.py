@@ -45,7 +45,8 @@ class Stock(object):
             if isinstance(to, str):
                 to = parse(to)
 
-            assert fr <= to
+            if fr > to:
+                return []
 
             in_range = _in_range(fr, to)
 
@@ -63,14 +64,14 @@ class Stock(object):
             else:
                 return float(elem[col_name])
 
-        assert ref_price in ['lo', 'hi', 'avg']
-        result = self._get_data(from_date, to_date)
-
-        column_name = {'lo': 'Low', 'hi': 'High', 'avg': ('Low', 'High')}[ref_price]
-
         xy = OrderedDict()
-        for el in result:
-            xy[parse(el['Date'])] = _value(column_name, el)
-            # xy[el['Date']] =
+        
+        if ref_price in ['lo', 'hi', 'avg']:
+            result = self._get_data(from_date, to_date)
+
+            column_name = {'lo': 'Low', 'hi': 'High', 'avg': ('Low', 'High')}[ref_price]
+
+            for el in result:
+                xy[parse(el['Date'])] = _value(column_name, el)
 
         return xy
