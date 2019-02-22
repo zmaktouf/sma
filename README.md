@@ -1,4 +1,7 @@
 # Welcome to sma
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/8bccb90bf4b043589ccda4a81fc0e300)](https://app.codacy.com/app/zmaktouf/sma?utm_source=github.com&utm_medium=referral&utm_content=zmaktouf/sma&utm_campaign=Badge_Grade_Settings)
+
 *sma* is a Simple Moving Average calculator
 
 # Getting started
